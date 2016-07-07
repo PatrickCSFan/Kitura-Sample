@@ -1,3 +1,5 @@
+## This is a Kitura-Sample Fork prepared for SWIFT Hong Kong meetup demonstration on 2016-07-07
+
 ![Kitura](https://raw.githubusercontent.com/IBM-Swift/Kitura/master/Documentation/KituraLogo.png)
 
 ![Mac OS X](https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat)
