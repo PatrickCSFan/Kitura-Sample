@@ -100,7 +100,7 @@ router.get("/redir") { _, response, next in
 // Reading parameters
 // Accepts user as a parameter
 router.get("/users/:user") { request, response, next in
-    response.headers["Content-Type"] = "text/plain; charset=utf-8"
+    response.headers["Content-Type"] = "text/html; charset=utf-8"
     let p1 = request.parameters["user"] ?? "(nil)"
     try response.send(
         "<!DOCTYPE html><html><body>" +
@@ -118,6 +118,19 @@ router.get("/multi", handler: { request, response, next in
 })
 router.get("/multi") { request, response, next in
     try response.send("I come afterward..\n").end()
+}
+
+// Index
+
+router.get("/") { request, response, next in
+    try response.send(
+        "<!DOCTYPE html><html><body>" +
+        "<h1>Kitura Sample Application</h1>" +
+        "<h2><a href='/hello'>Server Logic Response</a></h2>" +
+        "<h2><a href='/static'>Static File Response</a></h2>" +
+        "<h2><a href='/users/swiftHK'>URL Parameters Reponse</a></h2>" +
+        "<h2><a href='/multi'>Multiple Pass Response</a></h2>" +
+        "</body></html>\n\n").end()
 }
 
 // Support for Mustache implemented for OSX only yet
